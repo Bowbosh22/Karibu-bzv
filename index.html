@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Karibu Bzv — Restaurant &amp; Lounge-Bar · Jeudi Karaoké · Brazzaville</title>
+<meta name="description" content="Karibu Bzv, restaurant et lounge-bar à Brazzaville, ouvert 24h/24. Jeudi Karaoké à partir de 20h, soirées live, poulet mayo, cocktails. 1928 rue Nko, Maya Maya.">
+<meta name="theme-color" content="#120d09">
+<meta property="og:type" content="restaurant">
+<meta property="og:title" content="Karibu Bzv — Jeudi Karaoké à partir de 20h">
+<meta property="og:description" content="Ouvert 24h/24 · Poulet mayo · Cocktails · Soirées live à Brazzaville">
+<meta property="og:image" content="facade-nuit.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<script>
+/* Un lien du type ?table=N ouvre directement le menu */
+if (/[?&]table=/.test(location.search)) location.replace("menu.html" + location.search + location.hash);
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Karibu Bzv","description":"Restaurant et lounge-bar à Brazzaville. Jeudi Karaoké, soirées live, poulet mayo.",
+"telephone":"+242067119191","address":{"@type":"PostalAddress","streetAddress":"1928 rue Nko, Maya Maya","addressLocality":"Brazzaville","addressCountry":"CG"},
+"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"},
+"hasMenu":"menu.html","image":"facade-nuit.webp"}
+</script>
+<style>
+@font-face{font-family:'Passion One';src:url("passion-one.woff2") format("woff2");font-weight:400;font-display:swap}
+:root{--gold:#e0ab4a;--terra:#c4622d;--cream:#fbf3e6;--ink:#120d09;--ink2:#1b140e;--mute:rgba(251,243,230,.72);--green:#25d366;--r:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--ink);color:var(--cream);-webkit-font-smoothing:antialiased;line-height:1.55;padding-bottom:76px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1100px;margin:0 auto;padding:0 20px}
+.eyebrow{font-size:.7rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+h2{font-family:'Passion One',Impact,sans-serif;font-weight:400;font-size:clamp(2.2rem,7vw,3.6rem);line-height:1;letter-spacing:.01em;text-transform:uppercase;margin-top:8px}
+.lead{margin-top:14px;color:var(--mute);font-size:1rem;max-width:560px}
+section{padding:72px 0}
+
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 24px;border-radius:999px;font-weight:800;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;border:1.5px solid transparent;transition:transform .18s,background .18s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn.main{background:var(--terra);color:#fff;box-shadow:0 10px 28px rgba(196,98,45,.4)}
+.btn.gold{background:var(--gold);color:#241707}
+.btn.line{border-color:rgba(251,243,230,.45);background:rgba(255,255,255,.06);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.btn.wa{background:var(--green);color:#06260f}
+
+/* barre du haut */
+.top{position:fixed;inset:0 0 auto 0;z-index:30;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;transition:background .3s}
+.top.solid{background:rgba(18,13,9,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+.top .brand{display:flex;align-items:center;gap:10px;font-family:'Passion One',sans-serif;font-size:1.5rem;letter-spacing:.03em}
+.top .brand img{width:34px;height:34px;border-radius:50%}
+.top nav{display:none;gap:26px;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.top nav a{opacity:.85}.top nav a:hover{opacity:1;color:var(--gold)}
+.top .btn{padding:10px 18px;font-size:.68rem}
+@media(min-width:860px){.top nav{display:flex}}
+
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:90px 20px 60px;isolation:isolate;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:#14100c url("facade-nuit.webp") center 30%/cover no-repeat}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to bottom,rgba(12,8,5,.78),rgba(12,8,5,.55) 40%,rgba(12,8,5,.7) 72%,var(--ink))}
+.hero .logo{width:112px;height:112px;border-radius:50%;margin:0 auto;box-shadow:0 10px 36px rgba(0,0,0,.5)}
+.hero h1{font-family:'Passion One',Impact,sans-serif;font-weight:400;font-size:clamp(4.2rem,17vw,8.5rem);line-height:.95;letter-spacing:.02em;margin-top:14px;text-shadow:0 4px 30px rgba(0,0,0,.55)}
+.hero .tag{font-weight:700;font-size:.8rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-top:6px}
+.hero .pitch{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(1.1rem,3.6vw,1.6rem);margin:20px auto 0;max-width:640px;color:var(--cream);text-shadow:0 2px 14px rgba(0,0,0,.6)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:22px}
+.pill{padding:8px 14px;border-radius:999px;font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:rgba(12,8,5,.62);border:1px solid rgba(224,171,74,.55);color:var(--gold);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.pill.hot{background:var(--gold);color:#241707;border-color:var(--gold)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px}
+
+/* ambiance */
+.amb{background:var(--ink)}
+.mosaic{display:grid;gap:12px;margin-top:34px;grid-template-columns:1fr 1fr}
+.tile{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:1/1.1;isolation:isolate}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .6s}
+.tile:hover img{transform:scale(1.06)}
+.tile::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(10,7,4,.85),transparent 55%)}
+.tile span{position:absolute;left:16px;bottom:14px;font-size:.72rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+.tile.wide{grid-column:1/-1;aspect-ratio:2/1}
+@media(min-width:860px){.mosaic{grid-template-columns:2fr 1fr 1fr}.tile.wide{grid-column:auto;grid-row:span 2;aspect-ratio:auto}.tile{aspect-ratio:1/1.15}}
+.moods{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.moods li{list-style:none;padding:10px 16px;border-radius:999px;border:1px solid rgba(251,243,230,.2);font-size:.78rem;font-weight:600;color:var(--mute)}
+
+/* plat signature */
+.star{background:linear-gradient(to bottom,var(--ink),var(--ink2) 18%,var(--ink2) 82%,var(--ink));overflow:hidden}
+.sig{display:grid;gap:34px;align-items:center}
+.sig .txt{text-align:center}
+.sig .kick{display:inline-flex;align-items:center;gap:10px}
+.sig .kick::before,.sig .kick::after{content:"";width:28px;height:1px;background:var(--gold)}
+.sig h2{font-size:clamp(3.6rem,15vw,7.4rem);line-height:.9;margin-top:14px}
+.sig h2 em{display:block;font-style:normal;color:var(--gold)}
+.sig .hook{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(1.15rem,3.6vw,1.6rem);margin:18px auto 0;max-width:460px;color:var(--cream)}
+.sig .meta{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:20px}
+.sig .meta span{padding:8px 14px;border-radius:999px;border:1px solid rgba(224,171,74,.5);font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.sig .ctas{margin-top:26px}
+.frame{position:relative;max-width:440px;margin:0 auto;width:100%}
+.frame .ph{position:relative;aspect-ratio:4/5;border-radius:32px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.55);border:1px solid rgba(224,171,74,.4);transform:rotate(-1.6deg)}
+.frame .ph img{width:100%;height:100%;object-fit:cover}
+.frame::before{content:"";position:absolute;inset:18px -14px -14px 18px;border-radius:32px;border:1.5px solid rgba(224,171,74,.45);transform:rotate(2deg)}
+.sticker{position:absolute;right:-6px;bottom:-18px;z-index:2;width:116px;height:116px;border-radius:50%;background:var(--gold);color:#241707;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 14px 34px rgba(0,0,0,.5);transform:rotate(8deg);text-align:center;line-height:1}
+.sticker b{font-family:'Passion One',Impact,sans-serif;font-weight:400;font-size:2.1rem}
+.sticker small{font-size:.62rem;font-weight:800;letter-spacing:.16em;margin-top:3px}
+@media(min-width:860px){.sig{grid-template-columns:1.05fr 1fr;gap:70px}.sig .txt{text-align:left}.sig .kick::before{display:none}.sig .hook{margin-left:0}.sig .meta,.sig .ctas{justify-content:flex-start}.frame{max-width:none}.sticker{right:-22px;width:136px;height:136px}.sticker b{font-size:2.5rem}}
+
+/* comedy */
+.comedy{position:relative;isolation:isolate;overflow:hidden;text-align:center;padding:96px 0}
+.comedy::before{content:"";position:absolute;inset:0;z-index:-2;background:#1c1208 url("live-groupe.webp") center/cover no-repeat}
+.comedy::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to bottom,var(--ink) 0%,rgba(18,13,9,.7) 20%,rgba(18,13,9,.78) 72%,var(--ink) 100%)}
+.mic{width:54px;height:54px;margin:0 auto 6px;stroke:var(--gold);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.comedy h2{font-size:clamp(3.4rem,13vw,7rem);margin-top:10px;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.comedy h2 em{font-style:normal;color:var(--gold)}
+.when{display:inline-block;margin-top:18px;padding:10px 22px;border-radius:999px;background:var(--gold);color:#241707;font-weight:800;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase}
+.comedy .lead{margin-left:auto;margin-right:auto;color:var(--cream);text-shadow:0 2px 14px rgba(0,0,0,.7)}
+.comedy .btn{margin-top:26px}
+
+/* carte */
+.menu{background:var(--ink)}
+.menugrid{display:grid;gap:12px;margin-top:34px;grid-template-columns:1fr 1fr}
+@media(min-width:860px){.menugrid{grid-template-columns:repeat(4,1fr)}}
+.mcard{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:1/1.12;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;border:1px solid rgba(255,255,255,.14)}
+.mcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .6s}
+.mcard:hover img{transform:scale(1.07)}
+.mcard::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(10,7,4,.9),rgba(10,7,4,.1) 65%)}
+.mcard b{hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word;font-size:1rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+.mcard small{font-size:.7rem;color:var(--gold);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.center{text-align:center;margin-top:34px}
+
+/* infos */
+.info{background:var(--ink2)}
+.infogrid{display:grid;gap:24px;margin-top:34px}
+@media(min-width:860px){.infogrid{grid-template-columns:1fr 1.2fr;align-items:stretch}}
+.cards{display:grid;gap:12px}
+.icard{display:flex;gap:16px;align-items:center;padding:18px 20px;border-radius:var(--r);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+.icard svg{flex:none;width:26px;height:26px;stroke:var(--gold);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.icard small{display:block;font-size:.64rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.icard b{font-weight:700;font-size:1rem}
+.btnrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.map{min-height:300px;border-radius:var(--r);overflow:hidden;border:1px solid rgba(255,255,255,.12);background:#241a12}
+.map iframe{width:100%;height:100%;min-height:300px;border:0;filter:grayscale(.35) contrast(1.05)}
+
+footer{padding:34px 20px;text-align:center;color:var(--mute);font-size:.78rem;border-top:1px solid rgba(255,255,255,.08)}
+footer b{color:var(--cream)}
+footer a{color:var(--gold);font-weight:700}
+
+/* barre mobile collante */
+.dock{position:fixed;inset:auto 0 0 0;z-index:40;display:grid;grid-template-columns:1fr 1.25fr 1fr;align-items:stretch;background:rgba(18,13,9,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.12);padding:8px 8px calc(8px + env(safe-area-inset-bottom))}
+.dock a{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 4px;font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.dock svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.dock .mid{background:var(--terra);color:#fff;border-radius:14px}
+.dock .w{color:var(--green)}
+@media(min-width:860px){.dock{display:none}body{padding-bottom:0}}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* cuisine */
+.cuis{background:linear-gradient(to bottom,var(--ink),var(--ink2) 18%,var(--ink2) 82%,var(--ink))}
+.cuis .grid{display:grid;gap:34px;align-items:center}
+.cuis h2 em{display:block;font-style:normal;color:var(--gold)}
+.cuis .cats{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.cuis .cats li{list-style:none;padding:10px 16px;border-radius:999px;border:1px solid rgba(224,171,74,.5);font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.cuis .try{margin-top:22px;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(1.1rem,3.4vw,1.4rem);color:var(--cream);max-width:520px}
+.cuis .ctas{justify-content:flex-start;margin-top:26px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.duo figure{position:relative;aspect-ratio:4/5;border-radius:26px;overflow:hidden;border:1px solid rgba(224,171,74,.4);background:#241a12;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.duo figure:nth-child(2){transform:translateY(22px)}
+.duo img{width:100%;height:100%;object-fit:cover}
+@media(min-width:860px){.cuis .grid{grid-template-columns:1.05fr 1fr;gap:70px}}
+@media(max-width:859px){.cuis .ctas{justify-content:center}.cuis .txt{text-align:center}.cuis .cats{justify-content:center}.cuis .try{margin-left:auto;margin-right:auto}}
+.tile{background:#241a12}
+.resa .when{font-size:.74rem}
+.socials{display:flex;gap:18px;justify-content:center;margin-top:10px;flex-wrap:wrap}
+.mcard{background:#241a12 url("fond-karibu.webp") var(--pos,center)/cover}
+.mcard::after{background:linear-gradient(to top,rgba(10,7,4,.92),rgba(10,7,4,.25) 70%)}
+
+/* spécialité */
+.sp{text-align:center;padding:96px 0;background:radial-gradient(ellipse at 50% 45%,rgba(224,171,74,.13),transparent 62%),var(--ink)}
+.sp .kick{display:inline-flex;align-items:center;gap:10px}
+.sp .kick::before,.sp .kick::after{content:"";width:28px;height:1px;background:var(--gold)}
+.sp h2{font-size:clamp(4rem,17vw,9rem);line-height:.88;margin-top:14px}
+.sp h2 em{display:block;font-style:normal;color:var(--gold)}
+.sp .hook{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(1.15rem,3.6vw,1.7rem);margin:20px auto 0;max-width:520px}
+.sp .meta{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:20px}
+.sp .meta span{padding:8px 14px;border-radius:999px;border:1px solid rgba(224,171,74,.5);font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+/* programme */
+.week{background:var(--ink2)}
+.posters{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:34px -20px 0;padding:0 20px 10px;scrollbar-width:none}
+.posters::-webkit-scrollbar{display:none}
+.poster{flex:0 0 76%;scroll-snap-align:center;display:block}
+.poster figure{border-radius:22px;overflow:hidden;border:1px solid rgba(224,171,74,.35);box-shadow:0 24px 60px rgba(0,0,0,.5);aspect-ratio:4/5;background:#241a12}
+.poster img{width:100%;height:100%;object-fit:cover}
+.poster b{display:block;margin-top:14px;font-family:'Passion One',Impact,sans-serif;font-weight:400;font-size:1.6rem;letter-spacing:.03em;text-transform:uppercase}
+.poster b i{font-style:normal;color:var(--gold)}
+.poster small{color:var(--mute);font-size:.8rem}
+@media(min-width:860px){.posters{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible;margin:34px 0 0;padding:0;gap:24px}.poster{flex:none}}
+.live .when{font-size:.74rem}
+@media(min-width:860px){.hero::before{background-image:url("facade-noir-blanc.webp");background-position:center 45%}}
+.facade{margin-top:30px;border-radius:var(--r);overflow:hidden;border:1px solid rgba(255,255,255,.12);aspect-ratio:21/9;background:#1b140e}
+.facade img{width:100%;height:100%;object-fit:cover}
+@media(max-width:600px){.facade{aspect-ratio:3/2}}
+@media(min-width:860px){.facade{display:none}}
+.tile img{object-position:center 30%}
+.socials{display:flex;gap:18px;justify-content:center;margin-top:10px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <a class="brand" href="#accueil"><img src="logo-karibu.webp" width="34" height="34" alt="">KARIBU BZV</a>
+  <nav aria-label="Navigation">
+    <a href="#karaoke">Karaoké</a><a href="#poulet-mayo">Spécialité</a><a href="#programme">Programme</a><a href="#live">Live</a><a href="#infos">Infos</a>
+  </nav>
+  <a class="btn main" href="menu.html">Le menu</a>
+</header>
+
+<!-- ACCUEIL -->
+<section class="hero" id="accueil">
+  <div>
+    <img class="logo" src="logo-karibu.webp" width="224" height="224" alt="Logo Karibu Bzv — Restaurant, Lounge-Bar">
+    <h1>KARIBU</h1>
+    <p class="tag">Bzv · Restaurant &amp; Lounge-Bar</p>
+    <p class="pitch">Cuisine généreuse, cocktails et soirées live : plus qu'un restaurant, une expérience.</p>
+    <div class="pills">
+      <span class="pill">Ouvert 24h/24</span>
+      <span class="pill">Spécialité · Poulet mayo</span>
+      <span class="pill hot">Jeudi Karaoké · dès 20h</span>
+    </div>
+    <div class="ctas">
+      <a class="btn main" href="menu.html"><svg viewBox="0 0 24 24"><path d="M3 5.5C5 4.5 8 4.5 12 6.5c4-2 7-2 9-1v13c-2-1-5-1-9 1-4-2-7-2-9-1z"/><path d="M12 6.5v13"/></svg>Voir le menu</a>
+      <a class="btn line" href="#infos"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Nous trouver</a>
+    </div>
+  </div>
+</section>
+
+<!-- JEUDI KARAOKÉ -->
+<section class="star" id="karaoke">
+  <div class="wrap rv">
+    <div class="sig">
+      <div class="txt">
+        <p class="eyebrow kick">Tous les jeudis</p>
+        <h2>Jeudi <em>Karaoké</em></h2>
+        <p class="hook">Choisis ta chanson, prends le micro et montre-nous ce que tu as dans la voix.</p>
+        <div class="meta"><span>À partir de 20h</span><span>Ouvert à tous les clients</span><span>DJ Kephane · DJ Elie 007</span></div>
+        <div class="ctas">
+          <a class="btn gold" href="https://wa.me/242067119191?text=Bonjour%20Karibu%20Bzv%2C%20je%20souhaite%20r%C3%A9server%20une%20table%20pour%20le%20karaok%C3%A9%20de%20jeudi%20soir." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.5z"/></svg>Réserver ma table</a>
+          <a class="btn line" href="#programme">Voir le programme</a>
+        </div>
+      </div>
+      <div class="frame">
+        <div class="ph"><img src="chanteur.webp" alt="Un chanteur au micro pendant une soirée Karibu" loading="lazy" width="720" height="1080" style="object-position:center 20%"></div>
+        <div class="sticker"><b>20H</b><small>JEUDI</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPÉCIALITÉ -->
+<section class="sp" id="poulet-mayo">
+  <div class="wrap rv">
+    <p class="eyebrow kick">La spécialité de la maison</p>
+    <h2>Poulet <em>mayo</em></h2>
+    <p class="hook">Le plat qu'on vient chercher chez Karibu. Un classique de la maison, servi généreusement.</p>
+    <p class="hook" style="margin-top:12px;font-style:normal"><b>Entier 10&nbsp;000 FC · demi 5&nbsp;000 FC</b></p>
+    <div class="meta"><span>Cuisine généreuse</span><span>Sur place &amp; à emporter</span></div>
+    <div class="ctas">
+      <a class="btn wa" href="https://wa.me/242067119191?text=Bonjour%20Karibu%20Bzv%2C%20je%20souhaite%20commander%20un%20Poulet%20mayo." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.5z"/></svg>Commander sur WhatsApp</a>
+      <a class="btn line" href="menu.html">Voir la carte</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMME -->
+<section class="week" id="programme">
+  <div class="wrap rv">
+    <p class="eyebrow">Chaque semaine</p>
+    <h2>Le programme</h2>
+    <p class="lead">Trois soirées à ne pas manquer, avec DJ, ambiance et cocktails.</p>
+    <div class="posters">
+      <div class="poster"><figure><img src="affiche-kompa.webp" alt="Affiche Kompa Night, tous les mardis" loading="lazy"></figure><b><i>Mardi</i> · Kompa Night</b><small>Une soirée 100 % Kompa, avec DJ Kephane.</small></div>
+      <a class="poster" href="#karaoke"><figure><img src="affiche-karaoke.webp" alt="Affiche Karaoké Night, tous les jeudis" loading="lazy"></figure><b><i>Jeudi</i> · Karaoké Night</b><small>Dès 20h. Karaoké ouvert à tous les clients.</small></a>
+      <a class="poster" href="#live"><figure><img src="affiche-kabaret.webp" alt="Affiche Soirée Kabaret, tous les samedis" loading="lazy"></figure><b><i>Samedi</i> · Soirée Kabaret</b><small>Kabaret live, DJ set, musique et performances.</small></a>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE -->
+<section class="comedy live" id="live">
+  <div class="wrap rv">
+    <svg class="mic" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8.5 21h7"/></svg>
+    <p class="eyebrow">Musique en direct</p>
+    <h2>Live <em>music</em></h2>
+    <span class="when">Samedi &amp; dimanche</span>
+    <p class="lead">Chaque week-end, un groupe de chanteurs et de musiciens locaux monte sur scène pour faire vibrer la salle.</p>
+    <a class="btn gold" href="https://wa.me/242067119191?text=Bonjour%20Karibu%20Bzv%2C%20je%20souhaite%20r%C3%A9server%20une%20table%20pour%20la%20soir%C3%A9e%20live%20de%20ce%20week-end." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.5z"/></svg>Réserver ma table</a>
+  </div>
+</section>
+
+<!-- AMBIANCE -->
+<section class="amb" id="ambiance">
+  <div class="wrap rv">
+    <p class="eyebrow">L'ambiance</p>
+    <h2>Un lieu qui vit</h2>
+    <p class="lead">Un bar à cocktails, une salle pleine de vie et une cuisine généreuse : on vient dîner, boire un verre ou finir la soirée.</p>
+    <div class="mosaic">
+      <figure class="tile wide"><img src="bar-cocktail.webp" alt="Le barman prépare des cocktails à l'ananas" loading="lazy"><span>Cocktails maison</span></figure>
+      <figure class="tile"><img src="cocktail-verse.webp" alt="Un cocktail en préparation au bar" loading="lazy"><span>Le bar</span></figure>
+      <figure class="tile"><img src="serveur-martini.webp" alt="Un serveur souriant avec son plateau" loading="lazy"><span>L'accueil</span></figure>
+    </div>
+    <ul class="moods">
+      <li>Déjeuner &amp; dîner</li><li>Cocktails</li><li>Karaoké</li><li>Live music</li><li>Entre amis</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CARTE -->
+<section class="menu" id="carte">
+  <div class="wrap rv" style="text-align:center">
+    <p class="eyebrow">La carte</p>
+    <h2>Toute la carte en ligne</h2>
+    <p class="lead" style="margin-left:auto;margin-right:auto">Plats, boissons et prix : consultez la carte depuis votre téléphone, et commandez sur WhatsApp.</p>
+    <div class="center"><a class="btn main" href="menu.html">Ouvrir le menu complet</a></div>
+  </div>
+</section>
+
+<!-- INFOS -->
+<section class="info" id="infos">
+  <div class="wrap rv">
+    <p class="eyebrow">Infos pratiques</p>
+    <h2>Venez nous voir</h2>
+    <figure class="facade"><img src="facade-noir-blanc.webp" alt="La façade de Karibu Restaurant de nuit" loading="lazy"></figure>
+    <div class="infogrid">
+      <div class="cards">
+        <div class="icard"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><small>Adresse</small><b>1928 rue Nko, Maya Maya, Brazzaville</b></div></div>
+        <div class="icard"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg><div><small>Horaires</small><b>Ouvert 24h/24, sauf le lundi</b></div></div>
+        <div class="icard"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><div><small>Téléphone &amp; WhatsApp</small><b>06 711 9191</b></div></div>
+        <div class="btnrow">
+          <a class="btn main" href="https://www.google.com/maps/search/?api=1&query=-4.2580317,15.25762" target="_blank" rel="noopener">Itinéraire</a>
+          <a class="btn line" href="tel:+242067119191">Appeler</a>
+          <a class="btn wa" href="https://wa.me/242067119191?text=Bonjour%20Karibu%20Bzv%2C%20j%27ai%20une%20question." target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe title="Karibu Bzv sur la carte" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=-4.2580317,15.25762&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><b>Karibu Bzv</b> · Restaurant &amp; Lounge-Bar · Brazzaville</p>
+  <p class="socials"><a href="https://www.instagram.com/karibubzv" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@karibubzv" target="_blank" rel="noopener">TikTok</a><a href="https://www.facebook.com/Karibu-Bzv" target="_blank" rel="noopener">Facebook</a></p>
+  <p style="margin-top:10px">Site réalisé par <a href="https://bowbosh22.github.io/atelier-kpm/" target="_blank" rel="noopener">Atelier KPM</a></p>
+</footer>
+
+<!-- barre mobile -->
+<nav class="dock" aria-label="Actions rapides">
+  <a href="tel:+242067119191"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Appeler</a>
+  <a class="mid" href="menu.html"><svg viewBox="0 0 24 24"><path d="M3 5.5C5 4.5 8 4.5 12 6.5c4-2 7-2 9-1v13c-2-1-5-1-9 1-4-2-7-2-9-1z"/><path d="M12 6.5v13"/></svg>Menu</a>
+  <a class="w" href="https://wa.me/242067119191?text=Bonjour%20Karibu%20Bzv%2C%20je%20souhaite%20r%C3%A9server%20ou%20commander." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.5z"/></svg>WhatsApp</a>
+</nav>
+
+<script>
+const bar = document.getElementById("top");
+const onScroll = () => bar.classList.toggle("solid", scrollY > 40);
+addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold:.12}) : null;
+document.querySelectorAll(".rv").forEach(el => io ? io.observe(el) : el.classList.add("in"));
+</script>
+</body>
+</html>
