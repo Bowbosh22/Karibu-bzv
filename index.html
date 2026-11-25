@@ -184,6 +184,10 @@ footer a{color:var(--gold);font-weight:700}
 .sp .hook{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(1.15rem,3.6vw,1.7rem);margin:20px auto 0;max-width:520px}
 .sp .meta{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:20px}
 .sp .meta span{padding:8px 14px;border-radius:999px;border:1px solid rgba(224,171,74,.5);font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.sp .spg{display:grid;gap:44px;align-items:center}
+.sp .frame{max-width:380px}
+@media(min-width:860px){.sp .spg{grid-template-columns:1fr 1.1fr;gap:80px}.sp .txt{text-align:left}.sp .kick::before{display:none}.sp h2{font-size:clamp(4rem,8vw,7.2rem)}.sp .hook{margin-left:0}.sp .meta,.sp .ctas{justify-content:flex-start}.sp .frame{max-width:none}}
+.sp{overflow:hidden}
 /* programme */
 .week{background:var(--ink2)}
 .posters{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:34px -20px 0;padding:0 20px 10px;scrollbar-width:none}
@@ -258,15 +262,18 @@ footer a{color:var(--gold);font-weight:700}
 
 <!-- SPÉCIALITÉ -->
 <section class="sp" id="poulet-mayo">
-  <div class="wrap rv">
-    <p class="eyebrow kick">La spécialité de la maison</p>
-    <h2>Poulet <em>mayo</em></h2>
-    <p class="hook">Le plat qu'on vient chercher chez Karibu. Un classique de la maison, servi généreusement.</p>
-    <p class="hook" style="margin-top:12px;font-style:normal"><b>Entier 10&nbsp;000 FC · demi 5&nbsp;000 FC</b></p>
-    <div class="meta"><span>Cuisine généreuse</span><span>Sur place &amp; à emporter</span></div>
-    <div class="ctas">
-      <a class="btn wa" href="https://wa.me/242067119191?text=Bonjour%20Karibu%20Bzv%2C%20je%20souhaite%20commander%20un%20Poulet%20mayo." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.5z"/></svg>Commander sur WhatsApp</a>
-      <a class="btn line" href="menu.html">Voir la carte</a>
+  <div class="wrap spg">
+    <div class="frame rv"><div class="ph"><img src="poulet-mayo.webp" alt="Poulet mayo et ignames, la spécialité de Karibu Bzv" loading="lazy" width="980" height="1225"></div></div>
+    <div class="txt rv">
+      <p class="eyebrow kick">La spécialité de la maison</p>
+      <h2>Poulet <em>mayo</em></h2>
+      <p class="hook">Le plat qu'on vient chercher chez Karibu. Un classique de la maison, servi généreusement.</p>
+      <p class="hook" style="margin-top:12px;font-style:normal"><b>Entier 10&nbsp;000 FC · demi 5&nbsp;000 FC</b></p>
+      <div class="meta"><span>Cuisine généreuse</span><span>Sur place &amp; à emporter</span></div>
+      <div class="ctas">
+        <a class="btn wa" href="https://wa.me/242067119191?text=Bonjour%20Karibu%20Bzv%2C%20je%20souhaite%20commander%20un%20Poulet%20mayo." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.5z"/></svg>Commander sur WhatsApp</a>
+        <a class="btn line" href="menu.html">Voir la carte</a>
+      </div>
     </div>
   </div>
 </section>
