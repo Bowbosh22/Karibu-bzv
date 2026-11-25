@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Menu — Karibu Bzv</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Passion One';src:url("passion-one.woff2") format("woff2");font-weight:400;font-display:swap}
+:root{--gold:#e0ab4a;--terra:#c4622d;--text:#fbf3e6;--green:#25d366}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#120d09}
+body{font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text);-webkit-font-smoothing:antialiased}
+button,a{font:inherit;color:inherit;text-decoration:none;border:0;background:none;cursor:pointer}
+[hidden]{display:none!important}
+
+.screen{
+  position:relative;min-height:100vh;min-height:100dvh;width:100%;max-width:520px;margin:0 auto;
+  display:flex;flex-direction:column;overflow:hidden;overflow:clip;isolation:isolate;
+  padding:env(safe-area-inset-top) 0 0;
+}
+.bg{position:absolute;inset:0;z-index:-2;background:#120d09 url("fond-menu.webp") 55% center/cover no-repeat;transition:filter .4s}
+.veil{
+  position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(to bottom,rgba(12,8,5,.78) 0%,rgba(12,8,5,.30) 28%,rgba(12,8,5,.15) 45%,rgba(12,8,5,.55) 72%,rgba(12,8,5,.92) 100%);
+  transition:background .4s;
+}
+.screen.deep .bg{filter:blur(10px) brightness(.75);transform:scale(1.08)}
+.screen.deep .veil{background:linear-gradient(to bottom,rgba(12,8,5,.82),rgba(12,8,5,.7) 50%,rgba(12,8,5,.92))}
+
+.view{flex:1;display:flex;flex-direction:column;animation:in .35s both}
+@keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ---------- Accueil ---------- */
+.logo{margin:clamp(26px,6vh,60px) auto 0;text-align:center;padding:0 24px}
+.logo img{
+  width:clamp(120px,34vw,160px);height:auto;border-radius:50%;display:block;margin:0 auto;
+  box-shadow:0 0 0 3px rgba(224,171,74,.9),0 14px 40px rgba(0,0,0,.55);
+}
+.wordmark{
+  margin-top:16px;font-family:'Passion One','Arial Black',Impact,sans-serif;font-weight:400;
+  font-size:clamp(2.6rem,12.5vw,3.4rem);line-height:.95;letter-spacing:.05em;color:var(--text);
+  text-shadow:0 3px 18px rgba(0,0,0,.55);
+}
+.tagline{margin-top:8px;font-size:.66rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:rgba(251,243,230,.9);text-shadow:0 2px 10px rgba(0,0,0,.6)}
+.rule{width:44px;height:2px;background:var(--gold);margin:12px auto 0;border-radius:2px}
+.spacer{flex:1;min-height:14px}
+
+.hello{text-align:center;font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(251,243,230,.85);margin-bottom:12px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 16px}
+.tile{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;
+  min-height:112px;padding:12px 8px;border-radius:16px;text-align:center;
+  background:rgba(255,255,255,.11);
+  backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);
+  border:1px solid rgba(255,255,255,.22);box-shadow:0 10px 30px rgba(0,0,0,.35);
+  transition:transform .18s,background .18s,border-color .18s;
+}
+.tile:last-child:nth-child(odd){grid-column:1 / -1}
+.tile:active,.tile:hover{transform:translateY(-3px);background:rgba(255,255,255,.18);border-color:rgba(224,171,74,.8)}
+.tile svg{width:38px;height:38px;stroke:var(--text);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.tile b{font-size:.8rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.tile small{font-size:.6rem;font-weight:600;letter-spacing:.04em;color:rgba(251,243,230,.72)}
+
+.info{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:14px 16px 0;font-size:.66rem;font-weight:600;letter-spacing:.06em;color:rgba(251,243,230,.78)}
+.info span::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--gold);margin-right:7px;vertical-align:middle}
+
+/* ---------- Barre du bas ---------- */
+.bar{
+  margin-top:16px;padding:14px 16px calc(14px + env(safe-area-inset-bottom));
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+  background:rgba(12,8,5,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-top:1px solid rgba(255,255,255,.12);position:sticky;bottom:0;
+}
+.bar .it{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(251,243,230,.82)}
+.bar .it svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.bar .menu{
+  width:62px;height:62px;margin-top:-34px;border-radius:50%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  background:var(--terra);color:#fff;box-shadow:0 8px 22px rgba(0,0,0,.5),0 0 0 5px rgba(12,8,5,.72);
+  font-size:.55rem;font-weight:800;letter-spacing:.14em;
+}
+.bar .menu svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.bar .wa{color:var(--green)}
+
+/* ---------- En-tête des écrans intérieurs ---------- */
+.topbar{display:flex;align-items:center;gap:14px;padding:18px 16px 6px}
+.back{
+  width:42px;height:42px;border-radius:50%;display:grid;place-items:center;flex:none;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+.back svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.crumb{font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.ttl{font-family:'Passion One','Arial Black',Impact,sans-serif;font-size:2.4rem;line-height:1;letter-spacing:.05em;text-transform:uppercase}
+
+/* ---------- Écran catégories ---------- */
+.cats{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:18px 16px 24px}
+.cat{
+  position:relative;aspect-ratio:1/1.05;border-radius:18px;overflow:hidden;text-align:left;isolation:isolate;
+  border:1px solid rgba(255,255,255,.2);box-shadow:0 10px 26px rgba(0,0,0,.4);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:16px;
+  transition:transform .18s;
+}
+.cat:last-child:nth-child(odd){grid-column:1 / -1;aspect-ratio:2.2/1}
+.cat::before{content:"";position:absolute;inset:0;z-index:-2;background:var(--img,url("fond-karibu.webp")) var(--pos,center)/var(--size,260%) no-repeat}
+.cat::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(10,7,4,.9),rgba(10,7,4,.2) 65%,rgba(10,7,4,.35))}
+.cat:active,.cat:hover{transform:translateY(-3px);border-color:rgba(224,171,74,.85)}
+.cat small{font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.cat b{hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word;margin-top:4px;font-size:1.05rem;font-weight:800;text-transform:uppercase;line-height:1.1}
+.cat i{position:absolute;top:12px;right:12px;font-style:normal;font-size:.62rem;font-weight:800;padding:4px 9px;border-radius:999px;background:rgba(12,8,5,.7);color:var(--text)}
+
+/* ---------- Écran plats ---------- */
+.chips{display:flex;gap:8px;overflow-x:auto;padding:14px 16px 0;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:9px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(251,243,230,.8);background:rgba(255,255,255,.07)}
+.chip.on{background:var(--gold);border-color:var(--gold);color:#241707}
+
+.banner{margin:14px 16px 0;height:170px;border-radius:18px;border:1px solid rgba(255,255,255,.2);box-shadow:0 10px 26px rgba(0,0,0,.4);background:var(--img) center/cover no-repeat;position:relative;overflow:hidden}
+.banner::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,7,4,.45),transparent 60%)}
+.tbl{display:inline-block;margin-bottom:6px;padding:5px 14px;border-radius:999px;background:var(--gold);color:#241707;font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.7rem}
+.siteback{position:absolute;top:calc(14px + env(safe-area-inset-top));left:16px;z-index:6;display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:rgba(12,8,5,.55);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.siteback svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.dishes{list-style:none;padding:6px 20px 28px}
+.dualhead{display:grid;grid-template-columns:1fr 84px 70px;gap:8px;padding:14px 20px 0;font-size:.6rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);text-align:right}
+.dualhead span:first-child{text-align:left}
+.dish{display:flex;align-items:baseline;gap:12px;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.16);animation:in .4s both}
+.dish .n{flex:1;min-width:0}
+.dish .n b{display:block;font-size:1rem;font-weight:700}
+.dish .n span{display:block;margin-top:2px;font-size:.8rem;color:rgba(251,243,230,.65)}
+.dish .p{white-space:nowrap;font-weight:800;color:var(--gold)}
+.dish .p small{font-size:.66rem;font-weight:700;color:rgba(251,243,230,.65);margin-left:3px}
+.dish.dual{display:grid;grid-template-columns:1fr 84px 70px;gap:8px;align-items:baseline}
+.dish.dual .p{text-align:right}
+.dish.dual .p.none{color:rgba(251,243,230,.35);font-weight:600}
+
+@media (min-width:521px){body{display:grid;place-items:center}.screen{min-height:min(100vh,900px);border-radius:28px;box-shadow:0 20px 60px rgba(0,0,0,.6)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="screen" id="screen">
+  <div class="bg" role="img" aria-label="Karibu Bzv"></div>
+  <div class="veil"></div>
+
+  <a class="siteback" id="siteback" href="index.html" hidden><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>Le site</a>
+
+  <!-- ACCUEIL -->
+  <section class="view" id="v-home">
+    <header class="logo">
+      <img src="logo-karibu.webp" width="360" height="360" alt="Karibu Bzv — Restaurant · Lounge-Bar">
+      <h1 class="wordmark">KARIBU</h1>
+      <p class="tagline">Bzv · Restaurant &amp; Lounge-Bar</p>
+      <div class="rule"></div>
+    </header>
+    <div class="spacer"></div>
+    <p class="hello">Que souhaitez-vous découvrir ?</p>
+    <nav class="tiles" aria-label="Menu" id="tiles"></nav>
+    <div class="info" id="info"></div>
+  </section>
+
+  <!-- CATÉGORIES -->
+  <section class="view" id="v-cats" hidden>
+    <div class="topbar">
+      <a class="back" href="#" aria-label="Retour"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></a>
+      <div><div class="crumb">Karibu</div><div class="ttl" id="cats-title"></div></div>
+    </div>
+    <div class="cats" id="cats"></div>
+  </section>
+
+  <!-- LISTE -->
+  <section class="view" id="v-list" hidden>
+    <div class="topbar">
+      <a class="back" id="list-back" href="#" aria-label="Retour"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></a>
+      <div><div class="crumb" id="list-crumb"></div><div class="ttl" id="list-title"></div></div>
+    </div>
+    <div class="banner" id="banner" hidden></div>
+    <div class="chips" id="chips"></div>
+    <div class="dualhead" id="dualhead" hidden><span></span><span>Bouteille</span><span>Verre</span></div>
+    <ul class="dishes" id="dishes"></ul>
+  </section>
+
+  <footer class="bar">
+    <a class="it" id="map" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      Itinéraire
+    </a>
+    <a class="menu" href="#" aria-label="Accueil du menu">
+      <svg viewBox="0 0 24 24"><path d="M4 5h7a1 1 0 0 1 1 1v13a2 2 0 0 0-2-2H4z"/><path d="M20 5h-7a1 1 0 0 0-1 1v13a2 2 0 0 1 2-2h6z"/></svg>
+      MENU
+    </a>
+    <a class="it wa" id="wa" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-13.3 7.9L3 21l1.2-4.6A9 9 0 1 1 21 12z"/><path d="M8.5 9c.3 2.2 2.3 4.6 5 5.5l1.5-1.2-1.7-1-.8.6c-.9-.5-1.5-1.2-1.9-2l.6-.8-1-1.7z"/></svg>
+      WhatsApp
+    </a>
+  </footer>
+</main>
+
+<script>
+/* =====================================================================
+   DONNÉES — carte de Karibu (prix en FC)
+   dish : n = nom · d = précision · p = prix · v = prix du verre (spiritueux)
+   ===================================================================== */
+const RESTO = {
+  adresse: "1928 rue Nko, Maya Maya",
+  horaires: "Ouvert 24h/24",
+  whatsapp: "242067119191",
+  carte: "https://www.google.com/maps/search/?api=1&query=-4.2580317,15.25762"
+};
+
+const ICONS = {
+  plats:    '<path d="M8 44h48"/><path d="M12 44c0-11 9-19 20-19s20 8 20 19"/><path d="M32 25v-4"/><circle cx="32" cy="19" r="2.5"/><path d="M6 50h52"/>',
+  boissons: '<path d="M12 12h40L32 34z"/><path d="M32 34v18"/><path d="M22 52h20"/><path d="M40 12l8-8"/><circle cx="24" cy="19" r="2"/>',
+  glaces:   '<path d="M19 30a13 13 0 0 1 26 0z"/><path d="M20 30l12 27 12-27"/><path d="M26 30l6 14M38 30l-6 14"/>',
+  soir:     '<path d="M10 34h44c0 12-9 19-22 19S10 46 10 34z"/><path d="M23 26c-2-3 2-5 0-9M33 26c-2-3 2-5 0-9M43 26c-2-3 2-5 0-9"/>'
+};
+
+const SECTIONS = {
+  plats: { label:"Plats", sub:"Salades · BBQ · Pizzas", cats:[
+    { id:"mwana", label:"Menu Mwana", img:"cat-mwana.webp", pos:"35% 72%", dishes:[
+      { n:"Mini pizzas + frites", d:"Viande, poulet au jambon", p:"5 000" },
+      { n:"Mini burgers + frites", p:"5 000" },
+      { n:"Ailes de poulet barbecue", p:"5 000" },
+      { n:"Croquettes de poulet", p:"4 000" },
+      { n:"Pâtes penne, sauce tomate et crème liquide", d:"Au saucisse", p:"5 000" },
+      { n:"Yaourt", d:"Dessert enfant", p:"" },
+      { n:"Fruits au choix", d:"Banane, pomme, fraise, kiwi · dessert enfant", p:"" },
+      { n:"Boule à la noix de coco râpée", d:"Dessert enfant", p:"" } ]},
+    { id:"salades", label:"Salades", img:"cat-salades.webp", pos:"50% 55%", dishes:[
+      { n:"Salade crudités", d:"Oignon, tomate, laitue, poivron, olives, concombre, maïs doux, carottes, œuf dur", p:"5 000" },
+      { n:"Salade niçoise", d:"Laitue ou choux, thon, œuf dur, olives, tomate cerise, échalote, filets d'anchois, pomme de terre, haricots verts", p:"8 000" },
+      { n:"Salade César", d:"Salade, escalope de poulet pané, œuf dur, tomate cerise, croûtons, copeaux de parmesan, sauce césar", p:"7 000" },
+      { n:"Salade avocat crevettes", d:"Salade, avocat, crevettes, tomate cerise, échalote, œuf dur", p:"7 000" },
+      { n:"Karibu salade", d:"Pâtes, poulet mayo, œuf dur, tomate, oignons, poivrons", p:"6 000" } ]},
+    { id:"gastronomie", label:"Gastronomie", img:"cat-gastronomie.webp", pos:"50% 45%", dishes:[
+      { n:"Entrecôte de bœuf aux légumes", d:"Asperges et brocolis", p:"17 500" },
+      { n:"Bœuf bourguignon", p:"12 500" },
+      { n:"Steak de poulet, sauce crémeuse au boursin", p:"12 000" },
+      { n:"Souris de mouton à la purée de pommes de terre", p:"18 500" },
+      { n:"Pavé de capitaine, sauce citron", p:"12 500" } ]},
+    { id:"plats", label:"Plats", img:"cat-plats.webp", pos:"50% 50%", dishes:[
+      { n:"Queue de bœuf aux épinards / coco", p:"8 000" },
+      { n:"Bouillon sauvage", d:"Poisson fumé, poisson salé (sole), crevettes séchées", p:"5 000" },
+      { n:"Viande de bœuf", p:"7 000" },
+      { n:"Tiep poulet / poisson", p:"6 000" },
+      { n:"Tiep viande", p:"7 000" },
+      { n:"Mafé viande / poulet", p:"6 000" },
+      { n:"Liboké ya nzoungou de mâchoiron", d:"Avec banane vapeur", p:"10 000" },
+      { n:"Planche royale", d:"Côtes, cuisse de poulet, ailes de poulet, mini brochettes de viande, saucisse", p:"15 000" },
+      { n:"Poisson salé (sole) aux aubergines", p:"7 000" },
+      { n:"Sea food", d:"Fruits de mer, maïs, œuf dur, saucisse de volaille", p:"15 000" },
+      { n:"Cordon bleu", d:"Accompagné de pommes frites", p:"13 500" } ]},
+    { id:"pates", label:"Pâtes", img:"cat-pates.webp", pos:"50% 60%", dishes:[
+      { n:"Alfredo", d:"Poulet ou viande", p:"10 000" },
+      { n:"Carbonara", p:"10 000" },
+      { n:"Bolognaise", p:"7 000" } ]},
+    { id:"sauces", label:"Sauces", img:"cat-sauces.webp", pos:"50% 50%", dishes:[
+      { n:"Sauce au poivre", p:"2 000" },
+      { n:"Sauce tomate", p:"1 500" },
+      { n:"Sauce tartare", p:"2 000" },
+      { n:"Sauce crème aux champignons", p:"2 000" },
+      { n:"Sauce verte", p:"1 500" },
+      { n:"Sauce du chef", d:"Parfaite pour viande et volaille", p:"2 000" } ]},
+    { id:"accompagnements", label:"Accompagnements", img:"cat-accompagnements.webp", pos:"50% 60%", dishes:[
+      { n:"Maniocs", p:"1 500" },
+      { n:"Bananes frites / vapeur", p:"1 500" },
+      { n:"Saka saka", p:"3 500" },
+      { n:"Haricot blanc à la sauce tomate", p:"2 500" },
+      { n:"Riz blanc", p:"1 500" },
+      { n:"Pommes frites", p:"1 500" },
+      { n:"Pommes de terre sautées à l'ail", p:"1 500" },
+      { n:"Attiéké", p:"1 500" },
+      { n:"Purée de pommes de terre", p:"2 500" },
+      { n:"Riz au coco", p:"2 000" } ]},
+    { id:"bbq", label:"BBQ", img:"cat-bbq.webp", pos:"50% 60%", dishes:[
+      { n:"Poulet mayo entier", p:"10 000" },
+      { n:"Demi poulet mayo", p:"5 000" },
+      { n:"Poulet braisé entier", p:"10 000" },
+      { n:"Demi poulet braisé", p:"5 000" },
+      { n:"Ailes de poulet braisées", p:"5 000" },
+      { n:"Brochette de viande", p:"10 000" },
+      { n:"Côte pimentée", p:"5 000" },
+      { n:"Poisson braisé", d:"Bar, sole, likouf", p:"10 000 / 12 000 / 15 000" },
+      { n:"Saucisse accompagnée de pommes frites", p:"5 000" },
+      { n:"Mouton à l'étouffé", p:"10 000" },
+      { n:"Porc à l'étouffé", p:"10 000" },
+      { n:"Karibu côtes mayo", p:"6 000" } ]},
+    { id:"pizzas", label:"Pizzas", img:"cat-pizzas.webp", pos:"40% 55%", dishes:[
+      { n:"Pepperoni", d:"Sauce tomate, mozzarella, pepperoni bœuf, origan, olives noires", p:"10 000" },
+      { n:"Hawaïenne", d:"Sauce tomate, mozzarella, jambon de dinde, ananas, olives noires, origan", p:"8 000" },
+      { n:"Chicken", d:"Sauce tomate, mozzarella, poulet, crème fraîche, origan, olives noires", p:"7 000" },
+      { n:"Américaine", d:"Sauce tomate, mozzarella, viande hachée, œuf au plat, maïs, origan, olives noires", p:"7 500" },
+      { n:"Reine", d:"Sauce tomate, mozzarella, jambon de dinde, champignons, origan, olives noires", p:"7 500" },
+      { n:"Margarita", d:"Sauce tomate, mozzarella, origan, olives noires", p:"5 000" },
+      { n:"Ibti Sam", d:"Sauce tomate, lardons, tomate fraîche, poivrons, mozzarella, viande hachée, olives noires, origan, maïs", p:"8 000" },
+      { n:"Pizza aux fruits de mer", d:"Sauce tomate, mozzarella, crevettes, olives noires, origan", p:"10 000" } ]},
+    { id:"finger-food", label:"Finger food", img:"cat-finger-food.webp", pos:"50% 65%", dishes:[
+      { n:"Ju-king plongé dans une sauce cheddar-bacon", d:"Pain burger, salade, 3 steaks, 3 fromages cheddar, sauce burger, bacon, cornichons, pommes frites", p:"12 500" },
+      { n:"Karibu cheese", d:"2 steaks, 2 cheddar, bacon, œuf au plat, oignons caramélisés, sauce du chef, pain burger, pommes frites", p:"10 000" },
+      { n:"Chawarma poulet / viande", p:"3 000" },
+      { n:"Tacos poulet / viande", p:"4 000" },
+      { n:"Croque-monsieur / madame", d:"Jambon ou thon", p:"5 000" },
+      { n:"Chicken burger", d:"Pain burger, sauce, salade, cornichons, poulet pané, fromage cheddar, pommes frites", p:"5 000" },
+      { n:"Wrap poulet-avocat", p:"4 000" },
+      { n:"Wings aux graines de sésame", d:"Accompagnés de frites", p:"6 000" } ]},
+    { id:"box", label:"Box", img:"cat-box.webp", pos:"50% 50%", dishes:[
+      { n:"Karibu box", d:"Wings, mini burger, club sandwich, pommes frites + boisson", p:"12 500" },
+      { n:"Tasty Crousty", d:"Frites croustillantes ou riz, blanc de poulet pané, bacon, sauce crousty", p:"6 000" },
+      { n:"Formule cheese", d:"Cheese burger, pommes frites, jus ou eau", p:"7 000" } ]},
+    { id:"desserts", label:"Desserts", img:"cat-desserts.webp", pos:"50% 60%", dishes:[
+      { n:"Pain perdu au Nutella", d:"Avec une boule de glace", p:"5 000" },
+      { n:"Mousse au citron", p:"4 000" },
+      { n:"Glace à la banane fait maison", p:"4 000" },
+      { n:"Mousse au chocolat", p:"3 500" },
+      { n:"Assiette de fruits", p:"4 000" },
+      { n:"Salade de fruits", p:"3 500" } ]}
+  ]},
+  boissons: { label:"Boissons", sub:"Cocktails · Bières · Spiritueux", cats:[
+    { id:"cocktails", label:"Cocktails", img:"cat-cocktails.webp", pos:"55% 50%", dishes:[
+      { n:"Mojito", d:"Passion, ananas ou pastèque · feuilles de menthe, sucre de cannadou, citron, eau gazeuse, rhum blanc", p:"6 500" },
+      { n:"Piña colada", d:"Jus d'ananas frais, crème ou lait de coco, poudre de coco, rhum blanc", p:"6 500" },
+      { n:"Mai Tai", d:"Rhum blanc, rhum ambré, triple sec, jus de citron, sirop d'orgeat", p:"6 500" },
+      { n:"Bahama Mama", d:"Rhum blanc, rhum ambré, liqueur de coco, jus d'ananas, jus d'orange", p:"6 500" },
+      { n:"Planter", d:"Rhum ambré, jus d'orange, d'ananas et de citron, sirop de grenadine, Angostura bitters", p:"6 500" },
+      { n:"Chat noir", p:"8 000" } ]},
+    { id:"mocktails", label:"Mocktails", img:"cat-mocktails.webp", pos:"50% 50%", dishes:[
+      { n:"Virgin mojito", d:"Passion, ananas ou pastèque · menthe fraîche, citron vert, sucre, eau gazeuse", p:"5 000" },
+      { n:"Love me now", d:"Purée de passion, jus d'ananas, sirop de pêche, pastèque, citron, eau gazeuse", p:"5 000" },
+      { n:"Karibu fraise", d:"Sirop de fraise, crème fraîche, lait de coco, sauce chocolat, crème chantilly, jus d'ananas, sirop de popcorn", p:"6 000" },
+      { n:"Boro Bora", d:"Jus d'ananas, sirop de cannadou, fruit de la passion, citron jaune, sirop de grenadine", p:"5 000" },
+      { n:"Virgin piña colada", d:"Jus d'ananas, sirop de coco, lait de coco, poudre de coco", p:"5 000" } ]},
+    { id:"bieres", label:"Bières & boissons", img:"cat-bieres.webp", pos:"50% 55%", dishes:[
+      { n:"Primus", p:"1 000" },
+      { n:"Ngok", p:"1 000" },
+      { n:"Gin tonic", p:"1 000" },
+      { n:"Class", p:"1 000" },
+      { n:"Turbo King", p:"1 000" },
+      { n:"Heineken", p:"1 500" },
+      { n:"Guinness", p:"1 000" },
+      { n:"Chill", p:"1 000" },
+      { n:"Booster rouge", p:"1 000" },
+      { n:"Booster tonic", p:"1 000" },
+      { n:"Castel GM", p:"1 500" },
+      { n:"Beaufort", p:"1 000" },
+      { n:"Castel PM", p:"1 000" },
+      { n:"Doppel", p:"1 000" },
+      { n:"Black", p:"1 000" },
+      { n:"Stark", p:"1 000" },
+      { n:"33 Export", p:"1 000" },
+      { n:"Racine", p:"1 000" },
+      { n:"Red Bull", p:"2 000" },
+      { n:"Bavaria", p:"2 000" },
+      { n:"Savana", p:"2 000" },
+      { n:"Hollandia", p:"2 000" },
+      { n:"Corona", p:"2 000" },
+      { n:"Desperados", p:"2 000" },
+      { n:"Cérès", p:"5 000" },
+      { n:"3X", p:"1 000" } ]},
+    { id:"softs", label:"Softs, jus & eaux", img:"cat-softs.webp", pos:"50% 55%", dishes:[
+      { n:"Coca-Cola, Sprite, Pulp orange, Fanta, Orangina", d:"Petit modèle", p:"1 000" },
+      { n:"Coca-Cola, Sprite, Pulp orange, Fanta, Orangina", d:"Grand modèle", p:"1 500" },
+      { n:"Diabolo / sirop", d:"Diabolo menthe ou grenadine · sirop menthe, grenadine ou fraise", p:"2 000" },
+      { n:"Jus de fruits", d:"Pomme, orange, ananas ou mangue", p:"2 000" },
+      { n:"Jus pressé", d:"Selon la saison", p:"3 000" },
+      { n:"Jus de gingembre", p:"2 000" },
+      { n:"Eau Mayo / Vival / Cristal", d:"Petit modèle", p:"1 000" },
+      { n:"Eau Mayo / Vival / Cristal", d:"Grand modèle", p:"1 500" } ]},
+    { id:"whiskies", label:"Whiskies", img:"cat-whiskies.webp", pos:"50% 55%", dual:true, dishes:[
+      { n:"Red Label", p:"20 000", v:"3 000" },
+      { n:"Black Label", p:"35 000", v:"5 000" },
+      { n:"JP", p:"20 000", v:"3 000" },
+      { n:"Chivas 12 ans", p:"35 000", v:"5 000" },
+      { n:"Chivas 15 ans", p:"", v:"8 000" },
+      { n:"Chivas 18 ans", p:"80 000", v:"10 000" },
+      { n:"Jack Daniel's", p:"35 000", v:"5 000" },
+      { n:"Jack Daniel's Honey", p:"40 000", v:"6 000" },
+      { n:"Ballantine's", p:"20 000" },
+      { n:"Vat 69", p:"15 000" },
+      { n:"Clan Campbell", p:"15 000" },
+      { n:"Dimple", p:"", v:"5 000" },
+      { n:"White Horse", p:"", v:"3 000" },
+      { n:"Glenfiddich 12 ans", p:"50 000", v:"6 000" },
+      { n:"Glenfiddich 15 ans", p:"", v:"8 000" },
+      { n:"Glen Moray 12 ans", p:"", v:"6 000" },
+      { n:"Glen Moray 15 ans", p:"", v:"8 000" },
+      { n:"Glen Moray 18 ans", p:"", v:"18 000" },
+      { n:"Double Black", p:"", v:"8 000" },
+      { n:"Platinum Label", p:"", v:"11 000" },
+      { n:"Gold Label", p:"", v:"14 000" },
+      { n:"Green Label", p:"", v:"14 000" },
+      { n:"Johnnie Walker 18 ans", p:"", v:"12 000" },
+      { n:"Blue Label", p:"", v:"25 000" },
+      { n:"Jameson", p:"25 000" } ]},
+    { id:"vodka-rhum-gin", label:"Vodka, rhum & gin", img:"cat-vodka-rhum-gin.webp", pos:"50% 50%", dual:true, dishes:[
+      { n:"Vodka Absolut", p:"20 000", v:"3 000" },
+      { n:"Belvedere", p:"40 000", v:"5 000" },
+      { n:"Ciroc", p:"", v:"4 000" },
+      { n:"Bacardi blanc / brun", p:"", v:"4 000" },
+      { n:"Saint James blanc / brun", p:"", v:"4 000" },
+      { n:"Havana Club", p:"", v:"4 000" },
+      { n:"Malibu", p:"20 000" },
+      { n:"Gordon's", p:"", v:"4 000" },
+      { n:"Bombay", p:"", v:"4 000" },
+      { n:"Tanqueray", p:"", v:"4 000" } ]},
+    { id:"cognac-liqueurs", label:"Cognac & liqueurs", img:"cat-cognac-liqueurs.webp", pos:"30% 60%", dual:true, dishes:[
+      { n:"Hennessy", p:"45 000" },
+      { n:"Hennessy VS", p:"", v:"10 000" },
+      { n:"Hennessy VSOP", p:"", v:"15 000" },
+      { n:"Rémy Martin", p:"", v:"10 000" },
+      { n:"Martell", p:"", v:"10 000" },
+      { n:"Courcel", p:"", v:"5 000" },
+      { n:"Armagnac", p:"", v:"5 000" },
+      { n:"Amarula", p:"25 000" },
+      { n:"Baileys", p:"25 000" },
+      { n:"Disaronno", p:"", v:"5 000" },
+      { n:"Sheridan's", p:"", v:"5 000" },
+      { n:"Martini blanc", p:"20 000" },
+      { n:"Martini rouge", p:"20 000" } ]},
+    { id:"vins", label:"Vins", img:"cat-vins.webp", pos:"50% 50%", dishes:[
+      { n:"Château Valac", d:"Bouteille", p:"15 000" },
+      { n:"Pavillon Rouge", d:"Bouteille", p:"15 000" },
+      { n:"Mouton Cadet", d:"Bouteille", p:"25 000" },
+      { n:"JP Chenet", d:"Bouteille", p:"20 000" },
+      { n:"Comte Albert", d:"Bouteille", p:"10 000" },
+      { n:"Grand Versant", d:"Bouteille", p:"10 000" } ]}
+  ]}
+};
+/* ===================================================================== */
+
+/* =====================================================================
+   GOOGLE SHEET EN DIRECT
+   Colle ici le lien CSV de la feuille publiée (Fichier > Partager >
+   Publier sur le web > format CSV). Laisse vide pour utiliser
+   uniquement la carte ci-dessus.
+   ===================================================================== */
+const SHEET_CSV_URL = "";
+
+const norm = (s) => String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "");
+function parseCSV(t){
+  const rows = []; let row = [], cur = "", q = false;
+  t = String(t).replace(/^\uFEFF/, "");
+  for (let i = 0; i < t.length; i++){
+    const c = t[i];
+    if (q){
+      if (c === '"'){ if (t[i+1] === '"'){ cur += '"'; i++; } else q = false; }
+      else cur += c;
+    } else if (c === '"') q = true;
+    else if (c === ","){ row.push(cur); cur = ""; }
+    else if (c === "\n" || c === "\r"){
+      if (c === "\r" && t[i+1] === "\n") i++;
+      row.push(cur); cur = ""; if (row.some(x => x.trim() !== "")) rows.push(row); row = [];
+    } else cur += c;
+  }
+  row.push(cur); if (row.some(x => x.trim() !== "")) rows.push(row);
+  return rows;
+}
+function fmtPrice(v){
+  v = String(v == null ? "" : v).trim(); if (!v) return "";
+  const n = v.replace(/[\s\u00a0\u202f.,]/g, "");
+  return /^\d+$/.test(n) ? n.replace(/\B(?=(\d{3})+(?!\d))/g, "\u00a0") : v;
+}
+const HIDE = ["non", "no", "0", "faux", "false", "epuise", "epuisee", "indisponible"];
+function applySheet(csv){
+  const rows = parseCSV(csv); if (rows.length < 2) return false;
+  const head = rows[0].map(norm), ix = (n) => head.indexOf(n);
+  const iC = ix("categorie"), iN = ix("plat"), iP = ix("prix");
+  const iD = ix("description"), iV = ix("prixverre"), iA = ix("dispo"), iS = ix("section");
+  if (iC < 0 || iN < 0 || iP < 0) return false;
+  const by = {};
+  for (const r of rows.slice(1)){
+    const k = norm(r[iC]), n = (r[iN] || "").trim(); if (!k || !n) continue;
+    (by[k] = by[k] || { label: (r[iC] || "").trim(), sec: iS >= 0 ? norm(r[iS]) : "", list: [] });
+    if (iA >= 0 && HIDE.includes(norm(r[iA]))) continue;
+    const d = { n, p: fmtPrice(r[iP]) };
+    if (iD >= 0 && (r[iD] || "").trim()) d.d = r[iD].trim();
+    if (iV >= 0) d.v = fmtPrice(r[iV]);
+    by[k].list.push(d);
+  }
+  let changed = false; const used = new Set();
+  for (const S of Object.values(SECTIONS)) for (const c of S.cats){
+    const k = by[norm(c.label)] ? norm(c.label) : (by[norm(c.id)] ? norm(c.id) : "");
+    if (k){ c.dishes = by[k].list; c.dual = by[k].list.some(d => d.v); used.add(k); changed = true; }
+  }
+  /* catégories nouvelles : créées dans la section indiquée (colonne Section) */
+  for (const [k, o] of Object.entries(by)){
+    if (used.has(k)) continue;
+    const S = Object.entries(SECTIONS).find(([id, x]) => norm(id) === o.sec || norm(x.label) === o.sec);
+    if (S){ S[1].cats.push({ id: k, label: o.label, dishes: o.list, dual: o.list.some(d => d.v) }); changed = true; }
+  }
+  return changed;
+}
+let lastSheet = "";
+async function loadSheet(){
+  if (!SHEET_CSV_URL) return;
+  const key = "karibu-sheet-csv";
+  try { const c = localStorage.getItem(key); if (c && applySheet(c)){ lastSheet = c; renderTiles(); route(true); } } catch(e){}
+  try {
+    const ctl = new AbortController(), t = setTimeout(() => ctl.abort(), 8000);
+    const url = SHEET_CSV_URL + (SHEET_CSV_URL.includes("?") ? "&" : "?") + "_=" + Math.floor(Date.now() / 60000);
+    const res = await fetch(url, { signal: ctl.signal, cache: "no-store" });
+    clearTimeout(t); if (!res.ok) return;
+    const txt = await res.text();
+    if (txt !== lastSheet && applySheet(txt)){
+      lastSheet = txt; renderTiles(); route(true);
+      try { localStorage.setItem(key, txt); } catch(e){}
+    }
+  } catch(e){}
+}
+
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+const vis = (S) => S.cats.filter(c => c.dishes.length);
+function renderTiles(){
+  $("#tiles").innerHTML = Object.entries(SECTIONS).filter(([id, s]) => vis(s).length).map(([id, s]) => `
+  <a class="tile" href="#${id}">
+    <svg viewBox="0 0 64 64" aria-hidden="true">${ICONS[id] || ICONS.plats}</svg>
+    <b>${esc(s.label)}</b><small>${esc(s.sub)}</small>
+  </a>`).join("");
+}
+renderTiles();
+$("#info").innerHTML = `<span>${esc(RESTO.adresse)}</span><span>${esc(RESTO.horaires)}</span>`;
+$("#map").href = RESTO.carte;
+const TABLE = (new URLSearchParams(location.search).get("table") || "").replace(/\D/g,"").slice(0,3);
+$("#wa").href = `https://wa.me/${RESTO.whatsapp}?text=` + encodeURIComponent(TABLE ? `Bonjour Karibu, table ${TABLE} : je souhaite passer une commande.` : "Bonjour Karibu, je souhaite passer une commande.");
+if (TABLE) $("#info").insertAdjacentHTML("afterbegin", `<span class="tbl">Table ${TABLE}</span>`);
+
+function show(id, deep, keep){
+  $("#siteback").hidden = id !== "v-home" || !!TABLE;
+  ["v-home","v-cats","v-list"].forEach(v => { $("#"+v).hidden = v !== id; });
+  $("#screen").classList.toggle("deep", !!deep);
+  if (!keep) window.scrollTo(0, 0);
+}
+
+function route(keep){
+  const [sec, catId] = location.hash.replace("#","").split("/");
+  const S = SECTIONS[sec];
+  const cs = S ? vis(S) : [];
+  if (!cs.length) return show("v-home", false, keep);
+  const single = cs.length === 1;
+
+  if (!catId && !single){
+    $("#cats-title").textContent = S.label;
+    $("#cats").innerHTML = cs.map(c => `
+      <a class="cat" href="#${sec}/${c.id}" style="--pos:${c.pos || "center"}${c.img ? `;--img:url('${c.img}');--size:cover` : ""}">
+        <i>${c.dishes.length} ${c.dishes.length > 1 ? "choix" : "choix"}</i>
+        <small>${esc(S.label)}</small><b>${esc(c.label)}</b>
+      </a>`).join("");
+    return show("v-cats", true, keep);
+  }
+
+  const cat = cs.find(c => c.id === catId) || cs[0];
+  $("#list-back").href = single ? "#" : "#" + sec;
+  $("#list-crumb").textContent = single ? "Karibu" : `Karibu · ${S.label}`;
+  $("#list-title").textContent = cat.label;
+  const bn = $("#banner"); bn.hidden = !(single && cat.img);
+  if (!bn.hidden) bn.style.setProperty("--img", `url('${cat.img}')`);
+  $("#chips").hidden = single;
+  $("#chips").innerHTML = single ? "" : cs.map(c =>
+    `<a class="chip ${c.id === cat.id ? "on" : ""}" href="#${sec}/${c.id}">${esc(c.label)}</a>`).join("");
+  const on = $(".chip.on"); if (on) $("#chips").scrollLeft = Math.max(0, on.offsetLeft - 16);
+  $("#dualhead").hidden = !cat.dual;
+  $("#dishes").innerHTML = cat.dishes.map((d, i) => cat.dual ? `
+    <li class="dish dual" style="animation-delay:${i*40}ms">
+      <div class="n"><b>${esc(d.n)}</b></div>
+      ${d.p ? `<div class="p">${esc(d.p)}<small>FC</small></div>` : `<div class="p none">—</div>`}
+      ${d.v ? `<div class="p">${esc(d.v)}<small>FC</small></div>` : `<div class="p none">—</div>`}
+    </li>` : `
+    <li class="dish" style="animation-delay:${i*40}ms">
+      <div class="n"><b>${esc(d.n)}</b>${d.d ? `<span>${esc(d.d)}</span>` : ""}</div>
+      ${d.p ? `<div class="p">${esc(d.p)}<small>FC</small></div>` : ""}
+    </li>`).join("");
+  show("v-list", true, keep);
+}
+
+window.addEventListener("hashchange", () => route());
+route();
+loadSheet();
+</script>
+</body>
+</html>
