@@ -78,7 +78,7 @@ section{padding:72px 0}
 .tile::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(10,7,4,.85),transparent 55%)}
 .tile span{position:absolute;left:16px;bottom:14px;font-size:.72rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
 .tile.wide{grid-column:1/-1;aspect-ratio:2/1}
-@media(min-width:860px){.mosaic{grid-template-columns:2fr 1fr 1fr}.tile.wide{grid-column:auto;grid-row:span 2;aspect-ratio:auto}.tile{aspect-ratio:1/1.15}}
+@media(min-width:860px){.mosaic{grid-template-columns:1.7fr 1fr 1fr;gap:16px;height:clamp(420px,38vw,560px)}.tile,.tile.wide{grid-column:auto;grid-row:auto;aspect-ratio:auto;height:100%}}
 .moods{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .moods li{list-style:none;padding:10px 16px;border-radius:999px;border:1px solid rgba(251,243,230,.2);font-size:.78rem;font-weight:600;color:var(--mute)}
 
@@ -195,10 +195,24 @@ footer a{color:var(--gold);font-weight:700}
 .poster{flex:0 0 76%;scroll-snap-align:center;display:block}
 .poster figure{border-radius:22px;overflow:hidden;border:1px solid rgba(224,171,74,.35);box-shadow:0 24px 60px rgba(0,0,0,.5);aspect-ratio:4/5;background:#241a12}
 .poster img{width:100%;height:100%;object-fit:cover}
-.poster b{display:block;margin-top:14px;font-family:'Passion One',Impact,sans-serif;font-weight:400;font-size:1.6rem;letter-spacing:.03em;text-transform:uppercase}
-.poster b i{font-style:normal;color:var(--gold)}
-.poster small{color:var(--mute);font-size:.8rem}
-@media(min-width:860px){.posters{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible;margin:34px 0 0;padding:0;gap:24px}.poster{flex:none}}
+.poster .pt p{color:var(--mute);font-size:.86rem;line-height:1.5;margin-top:6px}
+.poster .pwhen{display:none}
+.poster .pday{display:block;margin-top:14px;font-size:.7rem;font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+.poster .pt h3{font-family:'Passion One',Impact,sans-serif;font-weight:400;font-size:1.5rem;letter-spacing:.03em;text-transform:uppercase;margin-top:4px}
+.poster .pt .btn{display:none}
+@media(min-width:860px){
+.posters{display:flex;flex-direction:column;overflow:visible;margin:56px 0 0;padding:0;gap:84px;scroll-snap-type:none}
+.poster{flex:none;display:grid;grid-template-columns:minmax(0,400px) 1fr;gap:clamp(48px,7vw,110px);align-items:center;justify-content:center}
+.poster:nth-child(even) figure{order:2}
+.poster:nth-child(even){grid-template-columns:1fr minmax(0,400px)}
+.poster:nth-child(even) .pt{text-align:right;align-items:flex-end}
+.poster .pt{display:flex;flex-direction:column;align-items:flex-start}
+.poster .pday{display:block;font-size:.72rem;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.poster .pt h3{font-size:clamp(3.4rem,6.4vw,6rem);line-height:.92;margin-top:12px}
+.poster .pt p{font-size:1.05rem;max-width:440px;margin-top:20px}
+.poster .pwhen{display:inline-block;margin-top:22px;padding:8px 14px;border-radius:999px;border:1px solid rgba(224,171,74,.5);font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.poster .pt .btn{display:inline-flex;margin-top:28px}
+}
 .live .when{font-size:.74rem}
 @media(min-width:860px){.hero::before{background-image:url("facade-noir-blanc.webp");background-position:center 45%}}
 .facade{margin-top:30px;border-radius:var(--r);overflow:hidden;border:1px solid rgba(255,255,255,.12);aspect-ratio:21/9;background:#1b140e}
@@ -285,9 +299,36 @@ footer a{color:var(--gold);font-weight:700}
     <h2>Le programme</h2>
     <p class="lead">Trois soirées à ne pas manquer, avec DJ, ambiance et cocktails.</p>
     <div class="posters">
-      <div class="poster"><figure><img src="affiche-kompa.webp" alt="Affiche Kompa Night, tous les mardis" loading="lazy"></figure><b><i>Mardi</i> · Kompa Night</b><small>Une soirée 100 % Kompa, avec DJ Kephane.</small></div>
-      <a class="poster" href="#karaoke"><figure><img src="affiche-karaoke.webp" alt="Affiche Karaoké Night, tous les jeudis" loading="lazy"></figure><b><i>Jeudi</i> · Karaoké Night</b><small>Dès 20h. Karaoké ouvert à tous les clients.</small></a>
-      <a class="poster" href="#live"><figure><img src="affiche-kabaret.webp" alt="Affiche Soirée Kabaret, tous les samedis" loading="lazy"></figure><b><i>Samedi</i> · Soirée Kabaret</b><small>Kabaret live, DJ set, musique et performances.</small></a>
+      <article class="poster">
+        <figure><img src="affiche-kompa.webp" alt="Affiche Kompa Night, tous les mardis" loading="lazy"></figure>
+        <div class="pt">
+          <span class="pday">Mardi</span>
+          <h3>Kompa Night</h3>
+          <p>Une soirée 100 % Kompa, avec DJ Kephane. Sélection kompa, danse et ambiance, cocktails et gastronomie.</p>
+          <span class="pwhen">Tous les mardis</span>
+          <a class="btn gold" href="https://wa.me/242067119191?text=Bonjour%20Karibu%20Bzv%2C%20je%20souhaite%20r%C3%A9server%20une%20table%20pour%20la%20Kompa%20Night%20de%20mardi." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.5z"/></svg>Réserver ma table</a>
+        </div>
+      </article>
+      <article class="poster">
+        <figure><img src="affiche-karaoke.webp" alt="Affiche Karaoké Night, tous les jeudis" loading="lazy"></figure>
+        <div class="pt">
+          <span class="pday">Jeudi</span>
+          <h3>Karaoké Night</h3>
+          <p>Dès 20h. Karaoké ouvert à tous les clients : choisis ta chanson, prends le micro et montre-nous ce que tu as dans la voix.</p>
+          <span class="pwhen">Tous les jeudis · dès 20h</span>
+          <a class="btn gold" href="https://wa.me/242067119191?text=Bonjour%20Karibu%20Bzv%2C%20je%20souhaite%20r%C3%A9server%20une%20table%20pour%20la%20Karaok%C3%A9%20Night%20de%20jeudi." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.5z"/></svg>Réserver ma table</a>
+        </div>
+      </article>
+      <article class="poster">
+        <figure><img src="affiche-kabaret.webp" alt="Affiche Soirée Kabaret, tous les samedis" loading="lazy"></figure>
+        <div class="pt">
+          <span class="pday">Samedi</span>
+          <h3>Soirée Kabaret</h3>
+          <p>Kabaret live, DJ set, musique et performances. Le samedi, la scène est au Karibu.</p>
+          <span class="pwhen">Tous les samedis</span>
+          <a class="btn gold" href="https://wa.me/242067119191?text=Bonjour%20Karibu%20Bzv%2C%20je%20souhaite%20r%C3%A9server%20une%20table%20pour%20la%20Soir%C3%A9e%20Kabaret%20de%20samedi." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.5z"/></svg>Réserver ma table</a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
