@@ -5,11 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Karibu Bzv — Restaurant &amp; Lounge-Bar · Jeudi Karaoké · Brazzaville</title>
 <meta name="description" content="Karibu Bzv, restaurant et lounge-bar à Brazzaville, ouvert 24h/24. Jeudi Karaoké à partir de 20h, soirées live, poulet mayo, cocktails. 1928 rue Nko, Maya Maya.">
+<link rel="canonical" href="https://karibubzv.com/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:url" content="https://karibubzv.com/">
+<meta property="og:site_name" content="Karibu Bzv">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://karibubzv.com/og-karibu.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="logo-192.png">
+<link rel="apple-touch-icon" href="logo-192.png">
 <meta name="theme-color" content="#120d09">
 <meta property="og:type" content="restaurant">
 <meta property="og:title" content="Karibu Bzv — Jeudi Karaoké à partir de 20h">
 <meta property="og:description" content="Ouvert 24h/24 · Poulet mayo · Cocktails · Soirées live à Brazzaville">
-<meta property="og:image" content="facade-nuit.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
@@ -18,10 +28,55 @@
 if (/[?&]table=/.test(location.search)) location.replace("menu.html" + location.search + location.hash);
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Restaurant","name":"Karibu Bzv","description":"Restaurant et lounge-bar à Brazzaville. Jeudi Karaoké, soirées live, poulet mayo.",
-"telephone":"+242067119191","address":{"@type":"PostalAddress","streetAddress":"1928 rue Nko, Maya Maya","addressLocality":"Brazzaville","addressCountry":"CG"},
-"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"},
-"hasMenu":"menu.html","image":"facade-nuit.webp"}
+{
+"@context": "https://schema.org",
+"@type": "Restaurant",
+"@id": "https://karibubzv.com/#restaurant",
+"name": "Karibu Bzv",
+"url": "https://karibubzv.com/",
+"description": "Restaurant et lounge-bar à Brazzaville (Maya Maya). Jeudi karaoké, soirées live, poulet mayo, cocktails.",
+"telephone": "+242067119191",
+"image": [
+"https://karibubzv.com/og-karibu.jpg"
+],
+"logo": "https://karibubzv.com/logo-192.png",
+"servesCuisine": [
+"Africaine",
+"Grillades",
+"Pizzas"
+],
+"hasMenu": "https://karibubzv.com/menu.html",
+"acceptsReservations": "https://wa.me/242067119191",
+"hasMap": "https://www.google.com/maps/search/?api=1&query=-4.2580317,15.25762",
+"address": {
+"@type": "PostalAddress",
+"streetAddress": "1928 rue Nko, Maya Maya",
+"addressLocality": "Brazzaville",
+"addressCountry": "CG"
+},
+"openingHoursSpecification": {
+"@type": "OpeningHoursSpecification",
+"dayOfWeek": [
+"Tuesday",
+"Wednesday",
+"Thursday",
+"Friday",
+"Saturday",
+"Sunday"
+],
+"opens": "00:00",
+"closes": "23:59"
+},
+"geo": {
+"@type": "GeoCoordinates",
+"latitude": -4.2580317,
+"longitude": 15.25762
+},
+"sameAs": [
+"https://www.instagram.com/karibubzv",
+"https://www.tiktok.com/@karibubzv"
+]
+}
 </script>
 <style>
 @font-face{font-family:'Passion One';src:url("passion-one.woff2") format("woff2");font-weight:400;font-display:swap}
@@ -221,6 +276,7 @@ footer a{color:var(--gold);font-weight:700}
 @media(min-width:860px){.facade{display:none}}
 .tile img{object-position:center 30%}
 .socials{display:flex;gap:18px;justify-content:center;margin-top:10px;flex-wrap:wrap}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 </style>
 </head>
 <body>
@@ -237,7 +293,7 @@ footer a{color:var(--gold);font-weight:700}
 <section class="hero" id="accueil">
   <div>
     <img class="logo" src="logo-karibu.webp" width="224" height="224" alt="Logo Karibu Bzv — Restaurant, Lounge-Bar">
-    <h1>KARIBU</h1>
+    <h1>KARIBU<span class="sr"> Bzv — restaurant et lounge-bar à Brazzaville</span></h1>
     <p class="tag">Bzv · Restaurant &amp; Lounge-Bar</p>
     <p class="pitch">Cuisine généreuse, cocktails et soirées live : plus qu'un restaurant, une expérience.</p>
     <div class="pills">
